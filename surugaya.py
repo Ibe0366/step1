@@ -6,6 +6,7 @@ f = open('url.txt')
 lines2 = f.readlines() 
 f.close()
 
+
 pa = []
 
 # 取得
