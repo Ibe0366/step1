@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('login/', function () {
+/*Route::get('login/', function () {
     return view('welcome');
 });
+*/
+Route::get('login', 'Auth@index');
 
 
 Route::get('contact_insert/', function () {
