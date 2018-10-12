@@ -55,6 +55,7 @@
     $file_handler = fopen("result.csv", "a");
     $array = array($date, $ip, $exampleRadios, $system, $operations, $other);
     fputcsv($file_handler, $array);
+    fclose($file_handler);
 
     // 次回回答のためのクッキーを設置
      setcookie("asukaru_ankate", "asukaru_ankate_ress_for_kanzaki", time()+60*60*24*7*4);

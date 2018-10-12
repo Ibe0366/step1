@@ -97,10 +97,67 @@
       .clear{
        clear:both;
       }
+
+      /*　table css　*/
+      table {
+  width: 100%;
+  border-spacing: 0;
+  font-size:14px;
+}
+
+table tr td {
+  padding: 8px 15px;
+  border-top: 1px solid #84b2e0;
+  border-bottom: 1px solid #84b2e0;
+  border-left: 1px solid #84b2e0;
+  text-align: left;
+}
+table tr td:last-child {
+  border-right: 1px solid #84b2e0;
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+}
+table tr {
+  background: #fff;
+}
+table tr:nth-child(2n+1) {
+  background: #f1f6fc;
+}
+table tr:last-child td {
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+}
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+table tr:hover {
+  background: #bbd4ee;
+  cursor:pointer;
+}
+
+.g_nav{
+  width: 100%;
+  padding: 13px;
+  padding: 3% 15% 3% 15%;
+}
+.card{
+  width: 200px;
+  border: 0.8px solid gray;
+  padding: 8px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+
     </style>
   </head>
   <body>
-    <?php echo $message; ?>
+    <?php 
+      if (!empty($message)) {
+          echo $message; 
+      }
+    ?>
     <div id="wrapp">
       <h1>WEB アンケート</h1>
       <br>
@@ -136,7 +193,7 @@
           </div>
           <br>
           <!-- どのようなシステムに興味があるのか -->
-          <p><strong>２・　どのようなシステムにご興味がありますか。(複数回答　可)</strong></p>
+          <p><strong>２・　どのようなことが気になりますか。(複数回答　可)</strong></p>
           <table>
             <tr>
               <td>
@@ -150,7 +207,7 @@
               <td>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox2" value="社外システム（サービス提供）">
-                  <label class="form-check-label" for="inlineCheckbox2"><p>社外システム（サービス提供）</p></label>
+                  <label class="form-check-label" for="inlineCheckbox2"><p>社外システム（ショッピングサイト運営やサービス提供）</p></label>
                 </div>
               </td>
             </tr>
@@ -159,14 +216,6 @@
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox3" value="WEBサイト制作">
                   <label class="form-check-label" for="inlineCheckbox3"><p>WEBサイト制作</p></label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox4" value="３D">
-                  <label class="form-check-label" for="inlineCheckbox4"><p>３D</p></label>
                 </div>
               </td>
             </tr>
@@ -189,8 +238,8 @@
             <tr>
               <td>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox7" value="IOT、ICT">
-                  <label class="form-check-label" for="inlineCheckbox7"><p>IOT、ICT（システム制御を含む）</p></label>
+                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox7" value="IOT、ICT（システム制御を含む）はテレビの中の他人事でしょ">
+                  <label class="form-check-label" for="inlineCheckbox7"><p>IOT、ICT（システム制御を含む）はテレビの中の他人事でしょ</p></label>
                 </div>
               </td>
             </tr>
@@ -198,7 +247,7 @@
               <td>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox8" value="データー解析">
-                  <label class="form-check-label" for="inlineCheckbox8"><p>データー解析（重回帰分析やロジスティクス解析などを用いた統計解析）</p></label>
+                  <label class="form-check-label" for="inlineCheckbox8"><p>データー解析（重回帰分析やロジスティクス解析などを用いた統計解析）でマジ卍</p></label>
                 </div>
               </td>
             </tr>
@@ -206,47 +255,71 @@
               <td>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox9" value="WEB解析（ホームページの解析）">
-                  <label class="form-check-label" for="inlineCheckbox9"><p>WEB解析（ホームページの解析/運用データーの解析）</p></label>
+                  <label class="form-check-label" for="inlineCheckbox9"><p>WEB解析（ホームページの解析/運用データーの解析）って何？？どうすんの？？事業と関係あんの？もっと楽にできないの？？</p></label>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox11" value="ゲーム開発">
-                  <label class="form-check-label" for="inlineCheckbox11"><p>ゲーム開発</p></label>
+                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox11" value="ゲーム開発でファンが増える？？">
+                  <label class="form-check-label" for="inlineCheckbox11"><p>ゲーム開発でファンが増える？？</p></label>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
                  <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox12" value="IOSアプリ、Androidアプリ">
-                  <label class="form-check-label" for="inlineCheckbox12"><p>IOSアプリ、Androidアプリ</p></label>
+                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox12" value="現在のIOSアプリ、Androidアプリの活用。何で大手ってアプリ開発に必死になの？？">
+                  <label class="form-check-label" for="inlineCheckbox12"><p>現在のIOSアプリ、Androidアプリの活用。何で大手ってアプリ開発に必死になの？？</p></label>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
                  <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox13" value="セキュリティ">
-                  <label class="form-check-label" for="inlineCheckbox13"><p>セキュリティ</p></label>
+                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox16" value="何がシステム化できるのか、そもそもシステム化する意味やメリットって何？？ ">
+                  <label class="form-check-label" for="inlineCheckbox16"><p>うちの仕事の何がシステム化できるの？？そもそもシステム化する意味やメリットって何？？  </p></label>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
                  <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox14" value="事業戦略・企業戦略とホームページ">
-                  <label class="form-check-label" for="inlineCheckbox14"><p>事業戦略・企業戦略とホームページ</p></label>
+                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox13" value="広告のシステム化？？ん？？何それおいしいの？てかビジネスに活用できるの？？ ">
+                  <label class="form-check-label" for="inlineCheckbox13"><p>広告のシステム化？？ん？？何それおいしいの？てかビジネスに活用できるの？？ </p></label>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
                  <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox13" value="とにかく全部">
-                  <label class="form-check-label" for="inlineCheckbox13"><p style="color: red;">とにかく全部（自分のところのお客様が何を求めているのかを知りたい）</p></label>
+                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox17" value="　今でも困ってないよ。でも、何か便利になるの？ならどう便利になるか教えてよ。でも予算かけたくないよ。裏技？？あるの？？ ">
+                  <label class="form-check-label" for="inlineCheckbox17"><p>　今でも困ってないよ。でも、何か便利になるの？ならどう便利になるか教えてよ。でも予算かけたくないよ。裏技？？あるの？？</p></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                 <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox20" value="SEO対策がなのとかって電話がかかってくるけど、何？？毎月費用をかける意味あるの？ ">
+                  <label class="form-check-label" for="inlineCheckbox20"><p>SEO対策がなのとかって電話がかかってくるけど、何？？毎月費用をかける意味あるの？</p></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                 <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox21" value="ECサイトって何？どうやってすんの？？売り上げ本当に上がるの？？">
+                  <label class="form-check-label" for="inlineCheckbox21"><p>ECサイトって何？どうやってすんの？？売り上げ本当に上がるの？？</p></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                 <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="system[]" id="inlineCheckbox15" value="とにかく全部">
+                  <label class="form-check-label" for="inlineCheckbox15"><p style="color: red;">とにかく全部</p></label>
                 </div>
               </td>
             </tr>
